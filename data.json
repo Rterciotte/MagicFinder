@@ -1,0 +1,7 @@
+{
+  "apiBase": "https://api.magicthegathering.io/v1/cards",
+  "lastSearch": null,
+  "lastPage": 1,
+  "lastPageSize": 12,
+  "cachedCards": []
+}

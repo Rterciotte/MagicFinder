@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>MTG Card Finder — Avançado</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>Magic: The Gathering — Card Finder</h1>
+    <p class="subtitle">Busque por nome/descrição, filtre por cor, tipo ou coleção. Símbolos de set e raridade via Scryfall.</p>
+  </header>
+
+  <main>
+    <section class="controls">
+      <input id="searchInput" type="text" placeholder="Nome ou parte da descrição..." />
+      <button id="searchBtn">Buscar</button>
+
+      <label class="small">Cores:
+        <select id="colorFilter" multiple size="1" title="Segure Ctrl/Cmd e clique para multi-seleção">
+          <option value="">(todas)</option>
+          <option value="White">White</option>
+          <option value="Blue">Blue</option>
+          <option value="Black">Black</option>
+          <option value="Red">Red</option>
+          <option value="Green">Green</option>
+        </select>
+      </label>
+
+      <label class="small">Tipo:
+        <input id="typeFilter" type="text" placeholder="ex: Creature, Instant" />
+      </label>
+
+      <label class="small">Conjunto (código):
+        <input id="setFilter" type="text" placeholder="ex: khm, eld" maxlength="6" />
+      </label>
+
+      <label class="small">Tamanho página:
+        <select id="pageSizeSelect">
+          <option>12</option>
+          <option>24</option>
+          <option>48</option>
+          <option>96</option>
+        </select>
+      </label>
+
+      <button id="clearHistoryBtn" title="Limpar histórico">Limpar histórico</button>
+    </section>
+
+    <section class="layout">
+      <aside class="history">
+        <h3>Histórico</h3>
+        <ul id="historyList"></ul>
+      </aside>
+
+      <section class="cards-area">
+        <div class="topbar">
+          <div id="resultInfo" class="result-info"></div>
+
+          <div class="pagination">
+            <button id="prevBtn" class="pagebtn" disabled>◀ Anterior</button>
+            <span id="pageLabel">Página 1</span>
+            <button id="nextBtn" class="pagebtn" disabled>Próxima ▶</button>
+          </div>
+        </div>
+
+        <div id="cardsGrid" class="cards-grid"></div>
+      </section>
+    </section>
+  </main>
+
+  <footer>
+    <p>Dados: <a href="https://magicthegathering.io" target="_blank" rel="noreferrer">api.magicthegathering.io</a> • Símbolos: <a href="https://scryfall.com" target="_blank" rel="noreferrer">Scryfall</a></p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
